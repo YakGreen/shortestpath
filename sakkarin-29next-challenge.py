@@ -1,7 +1,7 @@
 import csv
 import os.path
 import unittest
-from sys import argv
+
 class Graph(object):
     graph = {}
     def __init__(self):
@@ -18,11 +18,11 @@ class Graph(object):
         source_file.close()
 
     def shortest_path(self,start, goal):
-        shortest_dis = {}  # บันทึกต้นทุนเพื่อเข้าถึงโหนดนั้น จะได้รับการอัปเดตเมื่อเราเลื่อนไปตามกราฟ
-        track_predecessor = {}  # ติดตามเส้นทางที่นำเราไปสู่โหนดนี้
-        unseenNodes = self.graph  # เพื่อวนซ้ำทั้งกราฟ
-        infinity = 999999  # infinity ca basically be considered a very Large number
-        track_path = []  # จะติดตามการเดินทางของเรากลับไปยังเส้นทางที่เหมาะสมที่สุดของโหนดต้นทาง
+        shortest_dis = {}
+        track_predecessor = {}
+        unseenNodes = self.graph
+        infinity = 999999
+        track_path = []
 
         for node in unseenNodes:
             shortest_dis[node] = infinity
@@ -61,10 +61,6 @@ class Graph(object):
             track_path_join = track_path_join.join(track_path)
             return 'Path from ' + start + ' to ' + goal + ' is ' + str(track_path_join) + ', and have cost ' + str(shortest_dis[goal]) + '.'
 
-
-
-
-
 class TestShoretest(unittest.TestCase):
 
     def test_shortest_path_with_start_A_end_B(self):
@@ -97,7 +93,6 @@ class TestShoretest(unittest.TestCase):
 
 if __name__ == "__main__" :
     # while True:
-    #     # print("What is graph file name: graph.csv")
     #     file = input("What is graph file name:")
     #     start = input("What is start node: ").upper()
     #     goal = input("What is goal node: ").upper()
