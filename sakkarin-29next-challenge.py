@@ -65,46 +65,47 @@ class Graph(object):
 
 
 
-# class TestShoretest(unittest.TestCase):
-#
-#     def test_shortest_path_with_start_A_end_B(self):
-#         actual = Graph().shortest_path(start="A",goal="B")
-#         expected = 'Path from A to B is A->B, and have cost 5.'
-#         self.assertEqual(actual, expected)
-#
-#     def test_shortest_path_with_start_B_end_A(self):
-#         actual = Graph().shortest_path(start="B",goal="A")
-#         expected = 'Path from B to A is B->A, and have cost 5.'
-#         self.assertEqual(actual, expected)
-#
-#
-#     def test_shortest_path_with_start_C_end_F(self):
-#         actual = Graph().shortest_path(start="C",goal="F")
-#         expected = 'Path from C to F is C->G->H->F, and have cost 10.'
-#         self.assertEqual(actual, expected)
-#
-#
-#     def test_shortest_path_with_start_F_end_G(self):
-#         actual = Graph().shortest_path(start="F",goal="G")
-#         expected = 'Path from F to G is F->H->G, and have cost 8.'
-#         self.assertEqual(actual, expected)
-#
-#     def test_shortest_path_with_start_F_end_C(self):
-#         actual = Graph().shortest_path(start="F",goal="C")
-#         expected = 'Path from F to C is F->H->G->C, and have cost 10.'
-#         self.assertEqual(actual, expected)
+class TestShoretest(unittest.TestCase):
+
+    def test_shortest_path_with_start_A_end_B(self):
+        actual = Graph().shortest_path(start="A",goal="B")
+        expected = 'Path from A to B is A->B, and have cost 5.'
+        self.assertEqual(actual, expected)
+
+    def test_shortest_path_with_start_B_end_A(self):
+        actual = Graph().shortest_path(start="B",goal="A")
+        expected = 'Path from B to A is B->A, and have cost 5.'
+        self.assertEqual(actual, expected)
+
+
+    def test_shortest_path_with_start_C_end_F(self):
+        actual = Graph().shortest_path(start="C",goal="F")
+        expected = 'Path from C to F is C->G->H->F, and have cost 10.'
+        self.assertEqual(actual, expected)
+
+
+    def test_shortest_path_with_start_F_end_G(self):
+        actual = Graph().shortest_path(start="F",goal="G")
+        expected = 'Path from F to G is F->H->G, and have cost 8.'
+        self.assertEqual(actual, expected)
+
+    def test_shortest_path_with_start_F_end_C(self):
+        actual = Graph().shortest_path(start="F",goal="C")
+        expected = 'Path from F to C is F->H->G->C, and have cost 10.'
+        self.assertEqual(actual, expected)
 
 
 if __name__ == "__main__" :
-    while True:
-        # print("What is graph file name: graph.csv")
-        file = input("What is graph file name:")
-        start = input("What is start node: ").upper()
-        goal = input("What is goal node: ").upper()
-        if start.isalpha() and goal.isalpha() and os.path.basename(file):
-            break
-        print("Please enter characters A-Z only")
+    # while True:
+    #     # print("What is graph file name: graph.csv")
+    #     file = input("What is graph file name:")
+    #     start = input("What is start node: ").upper()
+    #     goal = input("What is goal node: ").upper()
+    #     if start.isalpha() and goal.isalpha() and os.path.basename(file):
+    #         break
+    #     print("Please enter characters A-Z only")
+    # print(Graph().shortest_path(start, goal))
     unittest.main()
-    print(Graph().shortest_path(start,goal))
+
 
 
